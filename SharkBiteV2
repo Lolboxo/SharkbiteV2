@@ -4,8 +4,8 @@ getgenv().TabSettings = { --customize yo stuff here
     Background = Color3.fromRGB(27, 27, 27),
     DarkContrast = Color3.fromRGB(35, 35, 35),--Element color
     TextColor = Color3.fromRGB(255, 255, 255),
-    Gradient1 = Color3.fromRGB(227, 66, 52),
-    Gradient2 = Color3.fromRGB(227, 66, 52),
+    Gradient1 = Color3.fromRGB(52, 58, 227),
+    Gradient2 = Color3.fromRGB(52, 58, 227),
     DiscordInvite = "WorldS",
     DiscordName = "WorldM"
 }
@@ -24,12 +24,15 @@ end
     local Main = Win:Tab("Main")
     local Player = Win:Tab("Player")
     local Misc = Win:Tab("Misc")
+    local Esp = Win:Tab("Esp")
   
 spawn(function()
       pcall(function()
           getgenv().UwU:Notify("Welcome!", "Script Set Up!") --Notification example lmao
     end)
 end)
+
+Main:Label("-----Boats-----")
 
 Main:Button("MilitarySubmarine", function()
     local args = {
@@ -182,7 +185,7 @@ Misc:Button("Rejoin", function()
  ts:Teleport(game.PlaceId, p)
 end)
 
-Player:Toggle("Inf Jump: Cant Stop Untill Death", false, function(t)
+Player:Toggle("Inf Jump", false, function(t)
     if t then
      print("true")
      else
@@ -206,4 +209,50 @@ UIS.InputBegan:connect(function(UserInput)
         end)
     end
 end)
+end)
+
+Esp:Button("Esp", function()
+    local Players = game:GetService("Players"):GetChildren()
+    local RunService = game:GetService("RunService")
+    local highlight = Instance.new("Highlight")
+    highlight.Name = "Highlight"
+    
+    for i, v in pairs(Players) do
+        repeat wait() until v.Character
+        if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+            local highlightClone = highlight:Clone()
+            highlightClone.Adornee = v.Character
+            highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+            highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            highlightClone.Name = "Highlight"
+        end
+    end
+    
+    game.Players.PlayerAdded:Connect(function(player)
+        repeat wait() until player.Character
+        if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+            local highlightClone = highlight:Clone()
+            highlightClone.Adornee = player.Character
+            highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+            highlightClone.Name = "Highlight"
+        end
+    end)
+    
+    game.Players.PlayerRemoving:Connect(function(playerRemoved)
+        playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy()
+    end)
+    
+    RunService.Heartbeat:Connect(function()
+        for i, v in pairs(Players) do
+            repeat wait() until v.Character
+            if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+                local highlightClone = highlight:Clone()
+                highlightClone.Adornee = v.Character
+                highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+                highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                highlightClone.Name = "Highlight"
+                task.wait()
+            end
+    end
+    end)
 end)
