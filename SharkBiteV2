@@ -1,0 +1,209 @@
+getgenv().UwU = loadstring(game:HttpGet"https://raw.githubusercontent.com/L1ZOT/Project-PJM/main/Notifycation")()--Notification Gui thing
+
+getgenv().TabSettings = { --customize yo stuff here
+    Background = Color3.fromRGB(27, 27, 27),
+    DarkContrast = Color3.fromRGB(35, 35, 35),--Element color
+    TextColor = Color3.fromRGB(255, 255, 255),
+    Gradient1 = Color3.fromRGB(227, 66, 52),
+    Gradient2 = Color3.fromRGB(227, 66, 52),
+    DiscordInvite = "WorldS",
+    DiscordName = "WorldM"
+}
+
+
+local Players_Table = {}
+    for i,v in pairs(game.Players:GetPlayers()) do
+    if v ~= game.Players.LocalPlayer then
+    table.insert(Players_Table, v.Name)
+    end
+end
+
+   local UIlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Aidanman14/Test_ui/main/PJMUICustomizable"))()
+  
+    local Win = UIlib:Window("SharkBitePrivate", "Scriptz")
+    local Main = Win:Tab("Main")
+    local Player = Win:Tab("Player")
+    local Misc = Win:Tab("Misc")
+  
+spawn(function()
+      pcall(function()
+          getgenv().UwU:Notify("Welcome!", "Script Set Up!") --Notification example lmao
+    end)
+end)
+
+Main:Button("MilitarySubmarine", function()
+    local args = {
+		[1] = "MilitarySubmarine"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("DuckyBoat", function()
+    local args = {
+		[1] = "DuckyBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("RedCanopyMotorboat", function()
+    local args = {
+		[1] = "RedCanopyMotorboat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("BlueWoodenMotorboat", function()
+    local args = {
+		[1] = "BlueWoodenMotorboat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("UnicornBoat", function()
+    local args = {
+		[1] = "UnicornBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("Jetski", function()
+    local args = {
+		[1] = "Jetski"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("Sloop", function()
+    local args = {
+		[1] = "Sloop"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("Marlin", function()
+    local args = {
+		[1] = "Marlin"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("DuckyBoatBeta", function()
+    local args = {
+		[1] = "DuckyBoatBeta"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("TubeBoat", function()
+    local args = {
+		[1] = "TubeBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("FishingBoat", function()
+    local args = {
+		[1] = "FishingBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("SmallWoodenSailboat", function()
+    local args = {
+		[1] = "SmallWoodenSailboat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("Catamaran", function()
+    local args = {
+		[1] = "Catamaran"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("CombatBoat", function()
+    local args = {
+		[1] = "CombatBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("GingerbreadSteamBoat", function()
+    local args = {
+		[1] = "GingerbreadSteamBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("Sleigh2022", function()
+    local args = {
+		[1] = "Sleigh2022"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("Snowmobile", function()
+    local args = {
+		[1] = "Snowmobile"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+Main:Button("PartyBoat", function()
+    local args = {
+		[1] = "PartyBoat"
+	}
+
+	game:GetService("ReplicatedStorage").EventsFolder.BoatSelection.UpdateHostBoat:FireServer(unpack(args))
+end)
+
+  
+Misc:Button("Rejoin", function()
+    local ts = game:GetService("TeleportService")
+     local p = game:GetService("Players").LocalPlayer
+ ts:Teleport(game.PlaceId, p)
+end)
+
+Player:Toggle("Inf Jump: Cant Stop Untill Death", false, function(t)
+    if t then
+     print("true")
+     else
+        print("false")
+    end
+        local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+
+_G.JumpHeight = 50;
+
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
